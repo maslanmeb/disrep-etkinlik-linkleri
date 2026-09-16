@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tüm Haftalar — DİSREP Etkinlik Linkleri</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <div class="hero">
+    <h1>Tüm Haftalar</h1>
+    <p>5, 6, 7 ve 8. sınıfların 36 haftalık tüm etkinlik bağlantıları — tek sayfada, sınıfa göre sekmeli.</p>
+    <div class="nav-links">
+      <a href="index.html">Hızlı Erişim</a>
+      <a href="tablo.html" class="current">Tüm Haftalar (Tablo)</a>
+      <a href="https://orgm.meb.gov.tr/disrep/ortaokuletkinlik.html" target="_blank" rel="noopener">MEB DİSREP Sitesi ↗</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <div class="note-box">
+      Bu tablo, her sınıf için tüm 36 haftanın bağlantılarını listeler. Seçenekli haftalarda (5. sınıf: 19,20,28 · 6. sınıf: 7,19,21 · 7. sınıf: 3,4,5,6 · 8. sınıf: 13,35) iki ayrı satır bulunur.
+    </div>
+
+    <div class="grade-tabs">
+      <button type="button" class="grade-tab" data-sinif="5">5. Sınıf</button>
+      <button type="button" class="grade-tab" data-sinif="6">6. Sınıf</button>
+      <button type="button" class="grade-tab" data-sinif="7">7. Sınıf</button>
+      <button type="button" class="grade-tab" data-sinif="8">8. Sınıf</button>
+    </div>
+
+    <table class="ref-table" id="refTable">
+      <thead>
+        <tr><th style="width:26%">Hafta</th><th>Bağlantılar</th></tr>
+      </thead>
+    </table>
+
+  </div>
+
+  <footer class="site">
+    Bu araç, MEB'in resmî DİSREP sayfalarındaki etkinlik bağlantılarını hızlıca bulmaya yardımcı olan bağımsız bir araçtır.<br>
+    Hiçbir veri sunucuya gönderilmez; yalnızca son seçilen sınıf, kolaylık olsun diye bu cihazda hatırlanır.
+  </footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/tablo.js"></script>
+</body>
+</html>

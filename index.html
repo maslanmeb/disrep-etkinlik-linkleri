@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DİSREP Etkinlik Linkleri — Sınıf Rehberlik Etkinlikleri</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <div class="hero">
+    <h1>DİSREP Etkinlik Linkleri</h1>
+    <p>Dijital Sınıf Rehberlik Etkinlikleri (5, 6, 7, 8. sınıf) — sınıfınızı ve haftayı seçin, etkinliğe doğrudan ulaşın.</p>
+    <div class="nav-links">
+      <a href="index.html" class="current">Hızlı Erişim</a>
+      <a href="tablo.html">Tüm Haftalar (Tablo)</a>
+      <a href="https://orgm.meb.gov.tr/disrep/ortaokuletkinlik.html" target="_blank" rel="noopener">MEB DİSREP Sitesi ↗</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <div class="note-box">
+      <b>Nasıl kullanılır?</b> Önce sınıfı, sonra haftayı seçin. ★ işaretli haftalarda iki farklı etkinlik seçeneği bulunur, onu da seçmeniz istenecek. En son "Etkinliğe Katıl" ile MEB'in sayfasını doğrudan açabilir, "Etkinlik Planını İndir" ile hazırlık dokümanını (Word) indirebilirsiniz.
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-num">1</span> Sınıf Seçin</div>
+      <div class="big-btn-row">
+        <button type="button" class="big-btn" data-sinif="5">5. Sınıf</button>
+        <button type="button" class="big-btn" data-sinif="6">6. Sınıf</button>
+        <button type="button" class="big-btn" data-sinif="7">7. Sınıf</button>
+        <button type="button" class="big-btn" data-sinif="8">8. Sınıf</button>
+      </div>
+    </div>
+
+    <div class="step disabled" id="stepHafta">
+      <div class="step-title"><span class="step-num">2</span> Hafta Seçin <span style="font-size:12.5px; color:#8a95a5; font-weight:normal; margin-left:6px;">(★ = seçenekli hafta)</span></div>
+      <div class="week-grid" id="weekGrid"></div>
+    </div>
+
+    <div class="step" id="stepSecenek" style="display:none;">
+      <div class="step-title"><span class="step-num">3</span> Seçenek Belirleyin</div>
+      <div class="option-row">
+        <button type="button" class="option-btn" data-secenek="1">Seçenek 1</button>
+        <button type="button" class="option-btn" data-secenek="2">Seçenek 2</button>
+      </div>
+    </div>
+
+    <div class="step" id="stepSonuc" style="display:none; border-color:#bfe0c4;">
+      <div class="result">
+        <div class="result-label">Hazır</div>
+        <div class="result-title" id="sonucBaslik"></div>
+        <div class="result-actions">
+          <a class="action-btn primary" id="linkOnline" target="_blank" rel="noopener"><span class="ico">🔗</span> Etkinliğe Katıl</a>
+          <a class="action-btn secondary" id="linkDocx" target="_blank" rel="noopener"><span class="ico">📄</span> Etkinlik Planını İndir (Word)</a>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="reset-link" id="resetBtn">↺ Baştan başla</button>
+
+  </div>
+
+  <footer class="site">
+    Bu araç, MEB'in resmî DİSREP sayfalarındaki etkinlik bağlantılarını hızlıca bulmaya yardımcı olan bağımsız bir araçtır.<br>
+    Hiçbir veri sunucuya gönderilmez; yalnızca son seçilen sınıf, kolaylık olsun diye bu cihazda hatırlanır.
+  </footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

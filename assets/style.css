@@ -1,0 +1,141 @@
+:root{
+  --navy: #1F3864;
+  --navy-2: #17294c;
+  --paper: #ffffff;
+  --bg: #f1f3f6;
+  --line: #dfe3e8;
+  --accent-bg: #eef2f8;
+  --amber: #D68910;
+  --amber-bg: #fff8e6;
+  --amber-line: #f0d99a;
+  --green: #1E8449;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color:#1c2430;
+  line-height:1.5;
+}
+h1,h2,h3{ font-family: Georgia, 'Times New Roman', serif; color: var(--navy); margin:0; }
+
+/* ---------------- Üst bant ---------------- */
+.hero{
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+  color:#fff; text-align:center; padding: 34px 20px 30px;
+}
+.hero h1{ color:#fff; font-size: 30px; margin-bottom:8px; }
+.hero p{ color: rgba(255,255,255,0.85); font-size:15px; max-width:720px; margin: 0 auto; }
+.hero .nav-links{ margin-top:18px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.hero .nav-links a{
+  color:#fff; text-decoration:none; font-size:14px; font-weight:700;
+  border:1px solid rgba(255,255,255,0.4); border-radius:20px; padding:7px 18px;
+  transition: background .15s ease;
+}
+.hero .nav-links a:hover{ background: rgba(255,255,255,0.15); }
+.hero .nav-links a.current{ background:#fff; color:var(--navy); }
+
+.wrap{ max-width: 980px; margin: 0 auto; padding: 26px 18px 50px; }
+
+/* ---------------- Not kutusu ---------------- */
+.note-box{
+  background: var(--amber-bg); border:1px solid var(--amber-line); border-radius:10px;
+  padding: 16px 20px; margin-bottom: 26px; font-size:14.5px; color:#5c4a1e;
+}
+.note-box b{ color: var(--amber); }
+
+/* ---------------- Adım kartı ---------------- */
+.step{
+  background: var(--paper); border:1px solid var(--line); border-radius:14px;
+  padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(20,30,60,0.05);
+}
+.step.disabled{ opacity:.4; pointer-events:none; }
+.step-title{ font-size:19px; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+.step-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:30px; height:30px; border-radius:50%; background: var(--navy); color:#fff;
+  font-family: Arial, sans-serif; font-size:15px; font-weight:700; flex:0 0 auto;
+}
+
+/* ---------------- Büyük dokunmatik butonlar (sınıf seçimi) ---------------- */
+.big-btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
+.big-btn{
+  flex: 1 1 100px; min-width:100px; padding: 20px 10px; border-radius:12px;
+  border: 2px solid var(--line); background:#fafbfc; cursor:pointer;
+  font-family: Georgia, serif; font-size: 26px; font-weight:700; color: var(--navy);
+  transition: all .12s ease; text-align:center;
+}
+.big-btn:hover{ border-color: var(--navy); background: var(--accent-bg); }
+.big-btn.active{ background: var(--navy); border-color: var(--navy); color:#fff; }
+
+/* ---------------- Hafta ızgarası ---------------- */
+.week-grid{
+  display:grid; grid-template-columns: repeat(6, 1fr); gap:9px;
+}
+@media (max-width: 640px){ .week-grid{ grid-template-columns: repeat(4, 1fr); } }
+.week-btn{
+  padding: 14px 4px; border-radius:9px; border:2px solid var(--line); background:#fafbfc;
+  cursor:pointer; font-family: Arial, sans-serif; font-size:16px; font-weight:700; color:#33415c;
+  transition: all .12s ease; position:relative;
+}
+.week-btn:hover{ border-color: var(--navy); background: var(--accent-bg); }
+.week-btn.active{ background: var(--navy); border-color: var(--navy); color:#fff; }
+.week-btn.has-option::after{
+  content:"★"; position:absolute; top:2px; right:5px; font-size:9px; color: var(--amber);
+}
+.week-btn.active.has-option::after{ color:#ffe9b0; }
+
+/* ---------------- Seçenek satırı ---------------- */
+.option-row{ display:flex; gap:14px; margin-top:4px; }
+.option-btn{
+  flex:1; padding:16px; border-radius:10px; border:2px solid var(--line); background:#fafbfc;
+  cursor:pointer; font-family: Arial, sans-serif; font-size:15.5px; font-weight:700; color:#33415c;
+  text-align:center;
+}
+.option-btn:hover{ border-color: var(--navy); }
+.option-btn.active{ background: var(--navy); border-color: var(--navy); color:#fff; }
+
+/* ---------------- Sonuç ---------------- */
+.result{
+  background: linear-gradient(135deg, #eef4ee 0%, #f3f8f3 100%); border:2px solid #bfe0c4;
+  border-radius:14px; padding: 26px; text-align:center; margin-top: 6px;
+}
+.result .result-label{ font-family: Arial, sans-serif; font-size:13.5px; color:#4b7a55; font-weight:700; text-transform:uppercase; letter-spacing:.5px; margin-bottom:4px; }
+.result .result-title{ font-size:22px; color:#215732; margin-bottom:20px; }
+.result-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+.action-btn{
+  display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+  padding: 16px 28px; border-radius:12px; font-family: Arial, sans-serif; font-size:17px; font-weight:700;
+  transition: transform .1s ease, box-shadow .1s ease;
+}
+.action-btn:hover{ transform: translateY(-2px); box-shadow: 0 6px 16px rgba(20,30,60,0.14); }
+.action-btn.primary{ background: var(--navy); color:#fff; }
+.action-btn.secondary{ background:#fff; color: var(--navy); border:2px solid var(--navy); }
+.action-btn .ico{ font-size:20px; }
+
+.reset-link{
+  display:block; text-align:center; margin-top:22px; font-family:Arial,sans-serif; font-size:13.5px;
+  color:#8a95a5; cursor:pointer; text-decoration:underline; background:none; border:none;
+}
+
+/* ---------------- Tablo sayfası ---------------- */
+.grade-tabs{ display:flex; gap:8px; margin-bottom:18px; flex-wrap:wrap; }
+.grade-tab{
+  padding:10px 22px; border-radius:20px; border:2px solid var(--line); background:#fff;
+  cursor:pointer; font-family:Georgia,serif; font-size:17px; font-weight:700; color:var(--navy);
+}
+.grade-tab.active{ background:var(--navy); border-color:var(--navy); color:#fff; }
+table.ref-table{ width:100%; border-collapse:collapse; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(20,30,60,0.05); }
+table.ref-table th{ background:var(--navy); color:#fff; font-family:Arial,sans-serif; font-size:13px; text-align:left; padding:10px 14px; }
+table.ref-table td{ border-bottom:1px solid var(--line); padding:9px 14px; font-size:14.5px; }
+table.ref-table tr:last-child td{ border-bottom:none; }
+table.ref-table tr:nth-child(even){ background:#fafbfc; }
+table.ref-table a{ color:var(--navy); font-weight:700; text-decoration:none; margin-right:16px; white-space:nowrap; }
+table.ref-table a:hover{ text-decoration:underline; }
+table.ref-table .hafta-cell{ font-weight:700; white-space:nowrap; }
+table.ref-table .opt-tag{ font-size:11px; color:#8a95a5; font-weight:normal; }
+
+footer.site{
+  text-align:center; font-size:12.5px; color:#9aa0a6; padding: 30px 16px 40px; line-height:1.7;
+}
