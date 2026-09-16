@@ -22,13 +22,19 @@
     const tr = document.createElement("tr");
     const haftaTd = document.createElement("td");
     haftaTd.className = "hafta-cell";
-    haftaTd.textContent = `${hafta}. Hafta`;
+    const haftaBaslik = document.createElement("div");
+    haftaBaslik.textContent = `${hafta}. Hafta`;
     if (secenek) {
       const tag = document.createElement("span");
       tag.className = "opt-tag";
       tag.textContent = ` (Seçenek ${secenek})`;
-      haftaTd.appendChild(tag);
+      haftaBaslik.appendChild(tag);
     }
+    const tarihDiv = document.createElement("div");
+    tarihDiv.className = "hafta-tarih";
+    tarihDiv.textContent = disrepHaftaTarihUzun(hafta, true);
+    haftaTd.appendChild(haftaBaslik);
+    haftaTd.appendChild(tarihDiv);
     const linkTd = document.createElement("td");
     const a1 = document.createElement("a");
     a1.href = links.online; a1.target = "_blank"; a1.rel = "noopener"; a1.textContent = "🔗 Etkinliğe Katıl";

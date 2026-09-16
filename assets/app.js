@@ -13,7 +13,8 @@
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "week-btn";
-      btn.textContent = h;
+      btn.title = disrepHaftaTarihUzun(h, true);
+      btn.innerHTML = `<span class="week-num">${h}</span><span class="week-date">${disrepHaftaTarihKisa(h)}</span>`;
       if (state.sinif && disrepHaftaSecenekliMi(state.sinif, h)) {
         btn.classList.add("has-option");
       }
@@ -62,6 +63,7 @@
     const links = disrepLinkleriOlustur(sinif, hafta, secenek);
     const secenekMetni = disrepHaftaSecenekliMi(sinif, hafta) ? ` — Seçenek ${secenek}` : "";
     el("#sonucBaslik").textContent = `${sinif}. Sınıf — ${hafta}. Hafta${secenekMetni}`;
+    el("#sonucTarih").textContent = disrepHaftaTarihUzun(hafta, true);
     el("#linkOnline").href = links.online;
     el("#linkDocx").href = links.docx;
     el("#stepSonuc").style.display = "block";
